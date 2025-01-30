@@ -1,0 +1,23 @@
+Integration with Photon Fusion for Playmaker Visual Scripting
+-------------------------
+FAQ
+-------------------------
+
+How do I network Sync Variables?
+
+1. Set up the FSM like you normally would with all your logic and variables set up.
+2. Any variables you want to 'Network Sync', be sure the 'Network Sync' box is checked.
+	Additionally, 'Array', 'Enum', and 'Rect' can still be used, but you must preface the variable name
+	with the world 'network'. 'String' and 'Array' variables also need their capacities to be in their name.
+	_2, _4, _8, _16, _32, _64, _128, _256, and _512 can be used at the end of the name to set its capactiy.
+	Its worth noting, GameObject variable types cannot be sync'd.
+3. When you are ready to set up your FSM for network syncing, in the inspector, add the component called
+	'Playmaker Fusion Setup Sync Variables'. 
+4. You can technically setup multiple FSMs at the same time, but I would just take one, and put it in the
+	'Fsms to Check' array in the insepctor (add an entry, drag and drop the FSM component into the new field you created).
+5. Click the 'Step 1' button, and Wait for Unity to finish compiling (its going to create a new script in the background).
+6. Once it seems unity is finished compiling, click 'Step 2'. The 'Playmaker Fusion Setup Sync Variables' component will 
+	disappear to be replaced by the new network sync component.
+7. If in prefab mode, if the only change you did was set up the sync, you should create an empty gameobject
+	as a child of the prefab. Unity will recognize the prefab changed, and save. You can then delete the empty you created.
+	Unity should now recognize you made changes, and save it.
