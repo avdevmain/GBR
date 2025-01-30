@@ -37,4 +37,21 @@ MonoBehaviour:
     categories:
     - 
     variableCategoryIDs: 00000000
-  events: []
+  events:
+  - Damage
+  - Fusion / OnConnectedToServer
+  - Fusion / OnPlayerJoined
+  - Fusion / OnPlayerLeft
+  - Fusion / OnConnectFailed
+  - Fusion / OnConnectRequest
+  - Fusion / OnCustomAuthenticationResponse
+  - Fusion / OnDisconnectedFromServer
+  - Fusion / OnHostMigration
+  - Fusion / OnInput
+  - Fusion / OnInputMissing
+  - Fusion / OnReliableDataReceived
+  - Fusion / OnSceneLoadDone
+  - Fusion / OnSceneLoadStart
+  - Fusion / OnSessionListUpdated
+  - Fusion / OnShutdown
+  - Fusion / OnUserSimulationMessage
