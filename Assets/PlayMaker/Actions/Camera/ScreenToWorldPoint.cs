@@ -33,6 +33,8 @@ namespace HutongGames.PlayMaker.Actions
 		public FsmFloat storeWorldZ;
 		[Tooltip("Repeat every frame")]
 		public bool everyFrame;
+		[Tooltip("Camera")]
+		public Camera cam;
 
 		public override void Reset()
 		{
@@ -66,7 +68,7 @@ namespace HutongGames.PlayMaker.Actions
 
 		void DoScreenToWorldPoint()
 		{
-			if (Camera.main == null)
+			if (cam == null)
 			{
 				LogError("No MainCamera defined!");
 				Finish();
@@ -87,7 +89,7 @@ namespace HutongGames.PlayMaker.Actions
 				position.y *= Screen.height;
 			}
 			
-			position = Camera.main.ScreenToWorldPoint(position);
+			position = cam.ScreenToWorldPoint(position);
 
 			storeWorldVector.Value = position;
 			storeWorldX.Value = position.x;
