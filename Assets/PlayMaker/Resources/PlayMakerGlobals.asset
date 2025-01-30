@@ -15,7 +15,13 @@ MonoBehaviour:
   variables:
     floatVariables: []
     intVariables: []
-    boolVariables: []
+    boolVariables:
+    - useVariable: 1
+      name: bIsThrowed
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
     stringVariables: []
     vector2Variables: []
     vector3Variables: []
@@ -25,6 +31,12 @@ MonoBehaviour:
     gameObjectVariables:
     - useVariable: 1
       name: Fusion 2/Local Player Avatar
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 0}
+    - useVariable: 1
+      name: ThrowingObject
       tooltip: 
       showInInspector: 0
       networkSync: 0
