@@ -15,7 +15,13 @@ MonoBehaviour:
   variables:
     floatVariables: []
     intVariables: []
-    boolVariables: []
+    boolVariables:
+    - useVariable: 1
+      name: bIsThrowed
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
     stringVariables: []
     vector2Variables: []
     vector3Variables: []
@@ -29,6 +35,12 @@ MonoBehaviour:
       showInInspector: 0
       networkSync: 0
       value: {fileID: 0}
+    - useVariable: 1
+      name: ThrowingObject
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 0}
     objectVariables: []
     materialVariables: []
     textureVariables: []
@@ -36,5 +48,22 @@ MonoBehaviour:
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 00000000
-  events: []
+    variableCategoryIDs: 000000000000000000000000
+  events:
+  - ObjectPickedUpGlobal
+  - Fusion / OnConnectedToServer
+  - Fusion / OnPlayerJoined
+  - Fusion / OnPlayerLeft
+  - Fusion / OnConnectFailed
+  - Fusion / OnConnectRequest
+  - Fusion / OnCustomAuthenticationResponse
+  - Fusion / OnDisconnectedFromServer
+  - Fusion / OnHostMigration
+  - Fusion / OnInput
+  - Fusion / OnInputMissing
+  - Fusion / OnReliableDataReceived
+  - Fusion / OnSceneLoadDone
+  - Fusion / OnSceneLoadStart
+  - Fusion / OnSessionListUpdated
+  - Fusion / OnShutdown
+  - Fusion / OnUserSimulationMessage
