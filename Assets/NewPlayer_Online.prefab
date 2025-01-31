@@ -1086,7 +1086,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 01010101
-        actionIsOpen: 00000000
+        actionIsOpen: 01010101
         actionStartIndex: 00000000050000000a0000000e000000
         actionHashCodes: f03da5026f1d0b04e8230800d5799805
         unityObjectParams:
@@ -2304,6 +2304,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetAnimatorBool
         - HutongGames.PlayMaker.Actions.UseGravity
         - HutongGames.PlayMaker.Actions.TransformDirection
+        - HutongGames.PlayMaker.Actions.GetFsmFloat
         - HutongGames.PlayMaker.Actions.Vector3Multiply
         - HutongGames.PlayMaker.Actions.AddForce
         - HutongGames.PlayMaker.Actions.ActivateGameObject
@@ -2315,10 +2316,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 01010101010101
-        actionIsOpen: 01010101010101
-        actionStartIndex: 00000000050000000a0000000c00000010000000130000001c000000
-        actionHashCodes: 68fece055f91350415264c01afd8b202bbee8e03febdb401b2cf1000
+        - 
+        actionEnabled: 0101010101010101
+        actionIsOpen: 0101010101010101
+        actionStartIndex: 00000000050000000a0000000c00000010000000150000001800000021000000
+        actionHashCodes: 68fece055f91350415264c01afd8b20287604502bbee8e03febdb401b2cf1000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -2364,6 +2366,14 @@ MonoBehaviour:
             value: {fileID: 0}
         - ownerOption: 1
           gameObject:
+            useVariable: 1
+            name: object
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
             useVariable: 0
             name: 
             tooltip: 
@@ -2395,6 +2405,18 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: Grabbing
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Variables
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: throwForce
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -2403,9 +2425,15 @@ MonoBehaviour:
         - useVariable: 1
           name: throwForce
           tooltip: 
-          showInInspector: 1
+          showInInspector: 0
           networkSync: 0
-          value: 300
+          value: 0
+        - useVariable: 1
+          name: throwForce
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: 
           tooltip: 
@@ -2492,12 +2520,12 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 00000000000000000000000001000000000000
+        byteData: 0000000000000000000000000001000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001200000012000000110000000100000014000000120000001100000001000000070000001400000011000000140000001c0000001c000000010000001c0000000f00000001000000140000001c0000001c0000000f0000000f0000000f0000000700000007000000010000001400000011000000110000000100000001000000
+        paramDataType: 140000001200000012000000110000000100000014000000120000001100000001000000070000001400000011000000140000001c0000001c000000010000001400000012000000120000000f000000010000001c0000000f00000001000000140000001c0000001c0000000f0000000f0000000f0000000700000007000000010000001400000011000000110000000100000001000000
         paramName:
         - gameObject
         - fsmName
@@ -2514,6 +2542,11 @@ MonoBehaviour:
         - gameObject
         - localDirection
         - storeResult
+        - everyFrame
+        - gameObject
+        - fsmName
+        - variableName
+        - storeValue
         - everyFrame
         - vector3Variable
         - multiplyBy
@@ -2532,8 +2565,8 @@ MonoBehaviour:
         - recursive
         - resetOnExit
         - everyFrame
-        paramDataPos: 00000000000000000100000000000000000000000100000002000000010000000100000002000000020000000200000003000000000000000100000006000000020000000000000007000000040000000300000004000000010000000200000003000000080000000c000000100000000500000003000000040000001100000012000000
-        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000000000001000000040000000000000000000000000000000000000000000000010000000000000000000000010000000000000000000000000000000000000000000000000000000400000004000000010000000000000000000000000000000100000001000000
+        paramDataPos: 000000000000000001000000000000000000000001000000020000000100000001000000020000000200000002000000030000000000000001000000060000000400000003000000040000000000000007000000020000000100000008000000050000000300000004000000020000000300000004000000090000000d000000110000000600000003000000040000001200000013000000
+        paramByteDataSize: 0000000000000000000000000000000001000000000000000000000000000000010000000400000000000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000010000000000000000000000000000000000000000000000000000000400000004000000010000000000000000000000000000000100000001000000
     - name: State 1
       description: 
       colorIndex: 0
@@ -2844,11 +2877,11 @@ MonoBehaviour:
     variables:
       floatVariables:
       - useVariable: 1
-        name: throwForce
+        name: 
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 300
+        value: 0
       - useVariable: 1
         name: speed
         tooltip: 
@@ -2857,6 +2890,12 @@ MonoBehaviour:
         value: 0
       - useVariable: 1
         name: thresholdSpeed
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: throwForce
         tooltip: 
         showInInspector: 0
         networkSync: 0
@@ -2901,7 +2940,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0

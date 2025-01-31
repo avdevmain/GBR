@@ -33,11 +33,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7930377744302250858}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.9906824, y: 0.0000009536743, z: 6.1009507}
-  m_LocalScale: {x: 0.65529, y: 0.65529, z: 0.65529}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 2265425809204322445}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56,7 +57,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7930377744302250858}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -745,18 +746,6 @@ MonoBehaviour:
         networkSync: 0
         value: 0
       - useVariable: 1
-        name: speed
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
-      - useVariable: 1
-        name: thresholdSpeed
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: 10
-      - useVariable: 1
         name: 
         tooltip: 
         showInInspector: 0
@@ -769,17 +758,35 @@ MonoBehaviour:
         networkSync: 0
         value: 0
       - useVariable: 1
+        name: catchSpeed
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 5
+      - useVariable: 1
         name: force
         tooltip: 
         showInInspector: 0
         networkSync: 0
         value: 0
       - useVariable: 1
-        name: catchSpeed
+        name: speed
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: thresholdSpeed
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 5
+        value: 10
+      - useVariable: 1
+        name: throwForce
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 300
       intVariables:
       - useVariable: 1
         name: damage
@@ -833,7 +840,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -842,7 +849,7 @@ MonoBehaviour:
     password: 
     locked: 0
     manualUpdate: 0
-    outVariableIndices: 0000000006000000
+    outVariableIndices: 0200000007000000
     keepDelayedEventsOnStateExit: 0
     preprocessed: 0
     ExposedEvents: []
@@ -893,7 +900,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2.99
-  m_Center: {x: -0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &6411363292640358236
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -906,7 +913,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0004288, y: 1.0158204, z: 1.0427117}
-  m_Center: {x: -0.49942377, y: 0.5112526, z: 0.46558294}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3140928150509373755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,3 +929,69 @@ MonoBehaviour:
   fsmSource: {fileID: 8042886851869103946}
   _isBusy:
     _value: 0
+--- !u!1001 &2260835574903306773
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7933149452216810368}
+    m_Modifications:
+    - target: {fileID: 1716135279360626, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_Name
+      value: Rock_Block_1x1x1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628116484741784, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628116484741784, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628116484741784, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628116484741784, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628116484741784, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628116484741784, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628116484741784, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628116484741784, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628116484741784, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628116484741784, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628116484741784, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23382799311985184, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d25aeeafef05074988284a5d1e8da5d, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+--- !u!4 &2265425809204322445 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4628116484741784, guid: a3415282f7fbb604d93853abe707b2c3, type: 3}
+  m_PrefabInstance: {fileID: 2260835574903306773}
+  m_PrefabAsset: {fileID: 0}
